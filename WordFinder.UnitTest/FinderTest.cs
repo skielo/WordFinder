@@ -33,6 +33,13 @@ namespace Finder.UnitTest
         }
 
         [Test]
+        public void Can_not_Find_Multiple_Word_Empty()
+        {
+            var retval = board.Find(new[] { "", " " });
+            Assert.AreEqual(0, retval.Count());
+        }
+
+        [Test]
         public void Can_Not_Find_Because_Does_Not_Exist()
         {
             var retval = board.Find(new[] { "fear", "solar" });

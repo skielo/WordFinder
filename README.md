@@ -10,11 +10,11 @@ The search code must be implemented as a class with the following interface:
 ```
 public class WordFinder
 { 	
-	public WordFinder(IEnumerable<string> matrix) { 
-    ... 
+    public WordFinder(IEnumerable<string> matrix) { 
+        ... 
     }
     public IEnumerable<string> Find(IEnumerable<string> wordstream) { 
-    ... 
+        ... 
     }
 }
 
@@ -38,7 +38,7 @@ I assumed the **IEnumerable<string> matrix** list that is used to initialize the
 The strategy I used for the _Find_ method is the following:
 
 - I iterate over the list of words within the _wordstream_.
-- Then for each word I iterate over the board.
+- Then for each word I validate the word is not null, empty or a space and then iterate over the board.
 - The iteration over the board it's with two for to optimize resources.
     - I verify if the first character of the word to search it's equal to the character in the give possition.
     - As well I cal the method _FindWithDirection_ with the right paramenters, if both conditions are true then I add that word to the list of results.
@@ -48,7 +48,7 @@ The strategy I used for the _Find_ method is the following:
 
 The solution has a UnitTest project in order to quickly validate the different use cases. by executing the unit test on the Class FinderTest.cs you will be able to validate different use cases and validations. 
 
-> The test cases are based on the given exercise. The idea is to validate the minimum vuable product.
+> The test cases are based on the given exercise. The idea is to validate the minimum viable product.
 
 To execute the test cases and validate the all of them pass you can right click on the class file and click on _Run Test(s)_
 
@@ -67,6 +67,8 @@ In order to execute the console app you need to select it first as _startup proj
 
 A console application is going to prompt. You need to follow the instructions. You are going to be prompted to type the path to a file which is going to serve as grid *matrix*. Each line on that file will be a row
 in the matrix. You can have a maximum of 64 lines and each line should have a maximum of 64 characters.
+
+> In the repo you will find two files _board.txt_ and wordStream.txt which are demo for the console app.
 
 Once you select the file the application console is going to ask you for the words stream. You need to provide another file path but this time should have a single line that contains all the words to search separated with a black space.
 > If you provde more than one line the application is going to considere only the first one.

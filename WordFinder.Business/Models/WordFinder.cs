@@ -49,6 +49,8 @@ namespace Finder.Business.Models
             var retval = new List<string>();
             foreach (var item in wordstream)
             {
+                if (string.IsNullOrEmpty(item) || string.IsNullOrWhiteSpace(item))
+                    continue;
                 for (int i = 0; i < board.Length; i++)
                 {
                     for (int j = 0; j < board[i].Length; j++)
