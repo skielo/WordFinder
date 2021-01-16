@@ -85,11 +85,15 @@ In order to execute the REST API you need to select it first as _startup project
 > Once the application started you need to use an external tool to comunicate with it. I recomend to use [POSTMAN](https://www.postman.com/).
 
 The REST API application has two endpoints:
-- *_api/init_*
-- *_api/find_*
+- *_api/board/init_*
+- *_api/board/find/{uid}_*
 
-In the first method you need to provide a json array with the board. Same constrains as the application console. This will initialize the board on the API application.
+In the first method you need to provide a json array with the board. Same constrains as the application console. This will initialize the board on the API application. It will also return you an UiD that you wil 
+need to use to call the second method.
 
 ***If you call the second method before call the init the application it's going to response an 204 http response code***.
 
-The second method you need to post the words stream as a json array. 
+The second method you need to post the words stream as a json array and using into the url the UiD you got in the previous step. 
+
+##### Disclaimer:
+*** The REST API does not have any security at all. The implementation it's open for the sake of a demo application. The whole application it's a POC to prove knowledge over the technologies. This software is not PRODUCTION READY.***
