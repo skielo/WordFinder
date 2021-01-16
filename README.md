@@ -27,7 +27,7 @@ Due to the size of the word stream, the code should be implemented in a **high p
 
 ## Implementation
 
-## Strategy on the WordFinder Class
+### Strategy on the WordFinder Class
 
 #### Assumptions
 
@@ -42,13 +42,15 @@ The strategy I used for the _Find_ method is the following:
 - The iteration over the board it's with two for to optimize resources.
     - I verify if the first character of the word to search it's equal to the character in the give possition.
     - As well I cal the method _FindWithDirection_ with the right paramenters, if both conditions are true then I add that word to the list of results.
-    - The method _FindWithDirection_ it's responsible to itereate over the board in order to find the rest of the word. It receives the current possition and the count of how many chars of the given word has found already. The method use it as base condition: Once the count it't equals to the length of the word to search it returns true. The method iterates recursively to find  in all directions in case it's the first character of the word. once it picks a direction sticks with it to prevent find the word in a snake like way.
+    - The method _FindWithDirection_ it's responsible to itereate over the board in order to find the rest of the word. It receives the current possition and the count of how many chars of the given word has found already. The method use it as base condition: Once the count it's equals to the length of the word to search it returns true. The method iterates recursively to find  in all directions in case it's the first character of the word. once it picks a direction sticks with it to prevent find the word in a snake like way.
 
 ## Running UnitTest
 
 The solution has a UnitTest project in order to quickly validate the different use cases. by executing the unit test on the Class FinderTest.cs you will be able to validate different use cases and validations. 
 
 > The test cases are based on the given exercise. The idea is to validate the minimum vuable product.
+
+To execute the test cases and validate the all of them pass you can right click on the class file and click on _Run Test(s)_
 
 ## Running the applications
 
@@ -63,10 +65,10 @@ In order to execute the console app you need to select it first as _startup proj
 - Select the Finder.ConsoleApp project.
 - Press F5
 
-A console application is going to prompt. You need to follow the instructions. You are going to be prompted to select a file which is going to serve as grid *matrix*. Each line on that file will be a row
+A console application is going to prompt. You need to follow the instructions. You are going to be prompted to type the path to a file which is going to serve as grid *matrix*. Each line on that file will be a row
 in the matrix. You can have a maximum of 64 lines and each line should have a maximum of 64 characters.
 
-Once you select the file the application console is going to ask you for the words stream. You need to provide another file but this time should have a single line that contains all the words to search separated with a black space.
+Once you select the file the application console is going to ask you for the words stream. You need to provide another file path but this time should have a single line that contains all the words to search separated with a black space.
 > If you provde more than one line the application is going to considere only the first one.
 
 #### Running the Rest API
@@ -78,12 +80,14 @@ In order to execute the REST API you need to select it first as _startup project
 - Select the Finder.REST project.
 - Press F5
 
-> Once the application started you need to use an external tool to comunicate with it. I recomend to use POSTMAN.
+> Once the application started you need to use an external tool to comunicate with it. I recomend to use [POSTMAN](https://www.postman.com/).
 
 The REST API application has two endpoints:
 - *_api/init_*
 - *_api/find_*
 
-In the first method you need to provide a json array with the board. Same constrains as the application console. This will initialize the board on the API application. 
-***If you call the second method before call the init the application it's going to response an 204 http response code***
+In the first method you need to provide a json array with the board. Same constrains as the application console. This will initialize the board on the API application.
+
+***If you call the second method before call the init the application it's going to response an 204 http response code***.
+
 The second method you need to post the words stream as a json array. 
