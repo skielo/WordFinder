@@ -39,9 +39,9 @@ The strategy I used for the _Find_ method is the following:
 
 - I iterate over the list of words within the _wordstream_.
 - Then for each word I validate the word is not null, empty or a space and then iterate over the board.
-- The iteration over the board it's with two for to optimize resources.
+- The iteration over the board it's with two _for statement_ to optimize resources.
     - I verify if the first character of the word to search it's equal to the character in the give possition.
-    - As well I cal the method _FindWithDirection_ with the right paramenters, if both conditions are true then I add that word to the list of results.
+    - As well I call the method _FindWithDirection_ with the right paramenters, if both conditions are true then I add that word to the list of results.
     - The method _FindWithDirection_ it's responsible to itereate over the board in order to find the rest of the word. It receives the current possition and the count of how many chars of the given word has found already. The method use it as base condition: Once the count it's equals to the length of the word to search it returns true. The method iterates recursively to find  in all directions in case it's the first character of the word. once it picks a direction sticks with it to prevent find the word in a snake like way.
 
 ## Running UnitTest
@@ -96,4 +96,4 @@ need to use to call the second method.
 The second method you need to post the words stream as a json array and using into the url the UiD you got in the previous step. 
 
 ##### Disclaimer:
-*** The REST API does not have any security at all. The implementation it's open for the sake of a demo application. The whole application it's a POC to prove knowledge over the technologies. This software is not PRODUCTION READY.***
+***The REST API does not have any security at all. The implementation it's open for the sake of a demo application. The whole application it's a POC to prove knowledge over the technologies. This software is not PRODUCTION READY.***
