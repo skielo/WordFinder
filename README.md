@@ -70,8 +70,8 @@ in the matrix. You can have a maximum of 64 lines and each line should have a ma
 
 > In the repo you will find two files _board.txt_ and wordStream.txt which are demo for the console app.
 
-Once you select the file the application console is going to ask you for the words stream. You need to provide another file path but this time should have a single line that contains all the words to search separated with a black space.
-> If you provde more than one line the application is going to considere only the first one.
+Once you select the file the application console is going to ask you for the words stream. You need to provide another file path but this time should have a single line that contains all the words to search separated with a blank space.
+> If you provide more than one line the application is going to considere only the first one.
 
 #### Running the Rest API
 
